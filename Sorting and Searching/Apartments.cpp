@@ -29,14 +29,14 @@ int  main()
 	sort(d.begin(),d.end());
 	sort(a.begin(),a.end());
 	int i=0,j=0,c=0;
-	while(i<n){
-		while(j<m && (d[i]-k)>a[j])j++;
-		if(abs(d[i]-a[j])<=k){
+	while(i<n && j<m){
+		if(d[i]<(a[j]-k))i++;
+		else if(abs(d[i]-a[j])<=k){
 			c++;
 			i++;
 			j++;
 		}
-		else i++;
+		else j++;
 	}
 	cout<<c;
 }
